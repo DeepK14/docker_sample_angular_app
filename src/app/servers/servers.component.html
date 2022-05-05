@@ -1,0 +1,27 @@
+<!--<input (input)="onGenerateServerName($event)">
+<p>{{serverName}}</p>
+!-->
+
+<input [(ngModel)]="serverName">
+
+<button 
+[disabled]="!activationAllowed"
+(click)="onCreateServer()"
+>
+    Create Server
+</button>
+<p *ngIf="serverStatus">{{serverCreated}}</p>
+
+<hr>
+
+<input [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button 
+[disabled]="!userName"
+(click)="clearUserName()"
+>
+Clear User Name
+</button>
+<app-server *ngFor="let server of serverList"></app-server>
+
+
