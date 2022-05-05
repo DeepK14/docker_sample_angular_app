@@ -1,0 +1,7 @@
+<button (click)="toggleDisplay()">Toggle Display</button>
+<p [ngStyle]="{display:getDisplayStatus()}">Just a random paragraph for practicing directives!</p>
+<div 
+*ngFor="let instance of clickCount; let i = index"
+[ngStyle]="{color:i>4?'white':'black'}"
+[ngClass]="{special:i>4}"
+>{{instance}}</div>
